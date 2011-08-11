@@ -1,0 +1,9 @@
+<h1>
+  編輯體重
+</h1>
+
+<%= form_for @weight, :url=>member_weight_path(@member, @weight) do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to '回前一頁', member_weights_path(@member) %>

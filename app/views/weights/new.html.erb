@@ -1,0 +1,7 @@
+<h1>新增體重</h1>
+
+<%= form_for @weight, :url => member_weights_path(@member) do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to '回到前一頁', member_weights_path(@member) %>

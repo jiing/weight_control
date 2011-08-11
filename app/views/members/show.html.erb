@@ -1,0 +1,27 @@
+<ul>
+  <li>姓名</li>  <%= @member.name %>
+  <li>身高</li>  <%= @member.height %>
+  <li>目標體重</li><%= @member.goal_weight %>
+  <li>目前體重</li><%= @member.current_weight %>
+</ul>
+
+<h1>
+  體重列表
+</h1>
+<table class="table">
+  <tr>
+    <th>體重 (kgw)</th>
+    <th>最近一次更新時間</th>
+    <th></th>
+  </tr>
+  <% @weights.each do |weight| %>
+  <tr>
+    <td><%= link_to "#{weight.value}", edit_member_weight_path(@member, weight) %></td>
+    <td><%= weight.updated_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+    <td><%= link_to 'X', member_weight_path(@member, weight), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  <% end %>
+</table>
+<br />
+<%= link_to '新增體重紀錄', new_member_weight_path(@member) %> |
+<%= link_to 'Back', members_path %>

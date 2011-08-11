@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>體重:</b>
+  <%= @weight.value %> kgw
+</p>
+
+
+<%= link_to 'Edit', edit_member_weight_path(@member, @weight) %> |
+<%= link_to 'Back', member_weights_path(@member) %>

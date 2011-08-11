@@ -1,0 +1,84 @@
+<h1>
+目前比賽實況
+</h1>
+
+<table class="table">
+  <tr>
+    <th></th>
+    <th>使用者名稱</th>
+    <th>身高 (cm)</th>
+    <th>目前體重 (kgw)</th>
+    <th>目標體重 (kgw)</th>
+    <th>BMI</th>
+    <th>目前體重 - 目標體重</th>
+    <th>最近一次的更新時間</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @members.each do |member| %>
+  <tr>
+    <td></td>
+    <td><%= link_to "#{member.name}",  edit_member_path(member) %></td>
+    <td><%= member.height %></td>
+    <td><%= member.current_weight %></td>
+    <td><%= member.goal_weight %></td>
+    <td><%= member.bmi %></td>
+    <td><%= (member.current_weight.to_f - member.goal_weight.to_f) if member.weights.first %></td>
+    <td><%= member.weights.first.updated_at.strftime('%Y-%m-%d %H:%M:%S') if member.weights.first %></td>
+    <td><%= link_to '體重紀錄', member %></td>
+    <td><%= link_to 'X', member, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to '新增成員', new_member_path %>
+<br/>
+<div id="placeholder" style="width:600px;height:300px;"></div>
+<img src="http://www.gtaust.com/products/stagemaker/aluminium-profiles/au-profiles-productivity-graph.gif">
+
+
+<% content_for :sidebar do %>
+  sidebar here!
+<div align="center">
+  <table border="1" cellspacing="0" bordercolor="#808080">
+    <tr>
+      <td bgcolor="#B00058" class="V10" align="center" colspan="2" width="460" height="50"><span class="sbody"><b><font color="#FFFFDF"><font size="2">Body Mass Index</font></font></b></span><font color="#FFFFDF"><b><font size="2"><span class="sbody">身體質量指數</span>＝ 體重(kgw) / 身高<sup>2</sup>(m<sup>2</sup>)<br>
+        人體健康最理想的數值被世界衛生組織認定為：22</font></b></font></td>
+      </tr>
+      <tr>
+        <td width="223" bgcolor="#FEDEDA" class="V10" align="center"><font color="#CC0000">分　級</font></td>
+        <td width="233" bgcolor="#FEDEDA" class="V10" align="center"><font color="#CC0000">身體質量指數</font></td>
+      </tr>
+      <tr>
+        <td width="223" bgcolor="#FDC1BB" class="V10" align="center"><font color="#008080">體重過輕</font></td>
+        <td width="233" bgcolor="#FDC1BB" class="V10" align="center"><font color="#008080">BMI
+          ＜18.5</font></td>
+        </tr>
+
+        <tr>
+          <td width="223" bgcolor="#FEDEDA" class="V10" align="center"><font color="#008080">正常範圍</font></td>
+          <td width="233" bgcolor="#FEDEDA" class="V10" align="center"><font color="#008080">18.5 ≦ BMI ＜24</font></td>
+        </tr>
+        <tr>
+          <td width="223" bgcolor="#FDC1BB" class="V10" align="center"><font color="#800000">稍　重</font></td>
+          <td width="233" bgcolor="#FDC1BB" class="V10" align="center"><font color="#800000">24 ≦ BMI ＜27</font></td>
+        </tr>
+        <tr>
+          <td width="223" bgcolor="#FEDEDA" class="V10" align="center"><font color="#800000">輕度肥胖</font></td>
+          <td width="233" bgcolor="#FEDEDA" class="V10" align="center"><font color="#800000">27 ≦ BMI ＜30</font></td>
+        </tr>
+        <tr>
+          <td width="223" bgcolor="#FDC1BB" class="V10" align="center"><font color="#800000">中度肥胖</font></td>
+          <td width="233" bgcolor="#FDC1BB" class="V10" align="center"><font color="#800000">30 ≦ BMI ＜35</font></td>
+        </tr>
+        <tr>
+          <td width="223" bgcolor="#FEDEDA" class="V10" align="center"><font color="#800000">重度肥胖</font></td>
+          <td width="233" bgcolor="#FEDEDA" class="V10" align="center"><font color="#800000">BMI ≧ 35</font></td>
+        </tr>
+      </table>
+    </div>
+<% end %>
+
+
+
