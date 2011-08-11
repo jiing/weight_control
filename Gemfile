@@ -46,6 +46,8 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  #gem 'capybara'
+  #gem 'hpricot'
   gem 'rails-erd'
   gem 'web-app-theme', '>= 0.6.2'
   #gem 'themes_for_rails'

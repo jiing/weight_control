@@ -18,7 +18,7 @@
   <tr>
     <td><%= link_to "#{weight.value}", edit_member_weight_path(@member, weight) %></td>
     <td><%= weight.updated_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
-    <td><%= link_to 'X', member_weight_path(@member, weight), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to (image_tag "web-app-theme/icons/cross.png"), member_weight_path(@member, weight), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
   <% end %>
 </table>

@@ -1,5 +1,5 @@
 WeightControl::Application.routes.draw do
-  #devise_for :users
+  devise_for :users
 
   resources :members do
     resources :weights

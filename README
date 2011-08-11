@@ -9,6 +9,11 @@ A easy weight control service
   - try to plot graph and put it in sidebar div section
   - avatar 小圖像
   - 飲食菜單
+
 Ref:
-http://www.tiger168.com/luckytop/lucky01.html
+* Devise
+  https://github.com/plataformatec/devise
+
+* BMI table
+  http://www.tiger168.com/luckytop/lucky01.html
 

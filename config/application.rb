@@ -35,8 +35,14 @@ module WeightControl
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
-
+    config.i18n.default_locale = "zh-TW"
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    #change the layout for signing in
+    config.to_prepare do
+      Devise::SessionsController.layout "sign"
+      Devise::RegistrationsController.layout "sign"
+    end
   end
 end

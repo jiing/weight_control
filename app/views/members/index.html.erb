@@ -1,6 +1,4 @@
-<h1>
-目前比賽實況
-</h1>
+<h3>目前比賽實況</h3>
 
 <table class="table">
   <tr>
@@ -27,7 +25,7 @@
     <td><%= (member.current_weight.to_f - member.goal_weight.to_f) if member.weights.first %></td>
     <td><%= member.weights.first.updated_at.strftime('%Y-%m-%d %H:%M:%S') if member.weights.first %></td>
     <td><%= link_to '體重紀錄', member %></td>
-    <td><%= link_to 'X', member, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to (image_tag "web-app-theme/icons/cross.png"), member_path(member), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
   <% end %>
 </table>

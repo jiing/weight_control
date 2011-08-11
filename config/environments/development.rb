@@ -22,5 +22,8 @@ WeightControl::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  #編輯 config/environments/development.rb 和 production.rb 加入寄信時預設的網站網址：
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
 
