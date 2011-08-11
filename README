@@ -1,0 +1,14 @@
+A easy weight control service
+
+8/10 now we have basic functionalities
+  - to keep logging your weights
+  - to calculate the difference between your current weight and target weight
+  - who is most closed to his goal
+
+8/12
+  - try to plot graph and put it in sidebar div section
+  - avatar 小圖像
+  - 飲食菜單
+Ref:
+http://www.tiger168.com/luckytop/lucky01.html
+
