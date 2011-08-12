@@ -26,8 +26,11 @@
     </div>
   </div>
   <div class="group navform wat-cf">
-    <div class="right"><%= image_tag "web-app-theme/icons/key.png" %>
-      <%= f.submit "登入" %></div>
+    <div class="right">
+      <button class='button' type='submit'>
+        <%= image_tag "web-app-theme/icons/key.png" %>登入
+      </button>
+    </div>
   </div>
 <% end %>
 <%= render :partial => "devise/shared/links" %>
