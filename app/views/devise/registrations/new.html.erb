@@ -1,0 +1,32 @@
+<h1><a href="/">夏日減重大作戰</a></h1>
+<div class="block" id="block-signup">
+<h2>註冊</h2>
+<div class="content login">
+    <div class="flash">
+        <% flash.each do |type, message| -%>
+        <div class="message <%= type %>">
+          <p><%= message %></p>
+        </div>
+        <% end -%>
+    </div>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => "form signup" }) do |f| %>
+  <%= devise_error_messages! %>
+  <div class="group wat-cf">
+    <%= f.label :email, :html=>{:class=>"label"} %><br />
+    <%= f.email_field :email, :html=>{:class=>"text_field"} %>
+  </div>
+  <div class="group wat-cf">
+    <%= f.label :password, :html=>{:class=>"label"} %><br />
+    <%= f.password_field :password, :html=>{:class=>"text_field"} %>
+  </div>
+  <div class="group wat-cf">
+    <%= f.label :password_confirmation, :html=>{:class=>"label"} %><br />
+    <%= f.password_field :password_confirmation, :html=>{:class=>"text_field"} %>
+  </div>
+  <div class="group navform wat-cf"><%= image_tag "web-app-theme/icons/tick.png"%>
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+<%= render :partial => "devise/shared/links" %>
+ </div>
+</div>

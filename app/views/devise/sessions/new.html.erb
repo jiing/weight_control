@@ -1,0 +1,35 @@
+<h1><a href="/">夏日減重大作戰</a></h1>
+<div class="block" id="block-login">
+  <h2>登入</h2>
+  <div class="content login">
+      <div class="flash">
+          <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+          <% end -%>
+      </div>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "form login" }) do |f| %>
+  <div class="group wat-cf">
+    <div class="left"><%= f.label :email, :html=>{:class=>"label right"} %></div>
+    <div class="right"><%= f.email_field :email, :html=>{:class=>"text_field"} %></div>
+  </div>
+  <div class="group wat-cf">
+    <div class="left"><%= f.label :password, :html=>{:class=>"label right"} %></div>
+    <div class="right"><%= f.password_field :password, :html=>{:class=>"text_field"} %></div>
+  </div>
+  <div class="group wat-cf">
+    <div class="right">
+  <% if devise_mapping.rememberable? -%>
+    <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+  <% end -%>
+    </div>
+  </div>
+  <div class="group navform wat-cf">
+    <div class="right"><%= image_tag "web-app-theme/icons/key.png" %>
+      <%= f.submit "登入" %></div>
+  </div>
+<% end %>
+<%= render :partial => "devise/shared/links" %>
+  </div>
+</div>
